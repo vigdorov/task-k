@@ -1,0 +1,34 @@
+.FormField {
+    display: flex;
+    margin: 10px 0;
+    align-items: center;
+    font-size: 14px;
+}
+
+.FormField_vertical {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.FormField__label {
+    margin-right: 10px;
+    width: 100px;
+}
+
+.FormField_vertical .FormField__label {
+    margin-right: 0;
+    margin-bottom: 5px;
+    width: auto;
+}
+
+.FormField__input {
+    padding: 10px 15px;
+    width: 100%;
+    border: 1px solid #b9b9b9;
+    border-radius: 5px;
+}
+
+.FomrField__input_textarea {
+    resize: none;
+    height: 150px;
+}

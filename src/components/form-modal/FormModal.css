@@ -1,0 +1,19 @@
+.FormModal {
+    min-width: 300px;
+    width: 40vw;
+    padding: 15px 0;
+}
+
+.FormModal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.FormModal__body {
+    margin-top: 25px;
+}
+
+.FormModal__footer {
+    margin-top: 25px;
+}
