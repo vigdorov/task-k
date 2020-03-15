@@ -1,0 +1,38 @@
+.Task {
+    background-color: #35C0CD;
+    border: 1px solid #015C65;
+    margin: 10px 0;
+    padding: 10px 20px;
+}
+
+.Task__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Task__title {
+    font-size: 16px;
+}
+
+.Task__controls .IconButton {
+    margin-left: 10px;
+}
+
+.Task__body {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.Task__description {
+    font-size: 14px;
+}
+
+.Task__footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Task__date {
+    font-style: italic;
+}

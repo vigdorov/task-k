@@ -1,0 +1,23 @@
+{
+  "name": "task-k",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server -c bs-config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vigdorov/task-k.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vigdorov/task-k/issues"
+  },
+  "homepage": "https://github.com/vigdorov/task-k#readme",
+  "dependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
