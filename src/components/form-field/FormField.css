@@ -24,7 +24,7 @@
 .FormField__input {
     padding: 10px 15px;
     width: 100%;
-    border: 1px solid #b9b9b9;
+    border: 1px solid var(--gray);
     border-radius: 5px;
 }
 

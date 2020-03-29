@@ -1,4 +1,5 @@
 @import url('./components/page/Page.css');
+@import url('./configs/variables.css');
 
 * {
     padding: 0;
