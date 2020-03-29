@@ -2,7 +2,7 @@
 
 .TasksList {
     height: 100%;
-    background-color: #5EC4CD;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     padding: 0 10px;
