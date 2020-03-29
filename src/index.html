@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task manager</title>
-    <link href="app.css" rel="stylesheet">
+    <link href="app.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/6963dff453.js"></script>
 </head>
 
 <body>
     <header class="HeaderPage">
         <h1 class="HeaderPage__title">Task Manager ver. 1.0.0</h1>
-        <button class="Button">
+        <button class="Button" id="add-task-button">
             <span class="Button__icon">
                 <i class="fa fa-plus-square-o" aria-hidden="true"></i>
             </span>
@@ -80,38 +80,38 @@
             </div>
         </div>
     </section>
-
-    <div class="Modal">
+    <div class="Modal" id="modal-window">
         <div class="Modal__container">
-            <form class="FormModal">
+            <form class="FormModal" id="modal-form">
                 <div class="FormModal__header">
                     <h3>Создание задачи</h3>
-                    <button class="IconButton">
+                    <button type="button" class="IconButton" id="modal-close-button">
                         <i class="fa fa-times" aria-hidden="true"></i>
                     </button>
                 </div>
                 <div class="FormModal__body">
-                    <div class="FormField FormField_vertical">
+                    <div class="FormField ">
                         <label class="FormField__label">Тема задачи</label>
-                        <input type="text" class="FormField__input" placeholder="Тема">
+                        <input type="text" class="FormField__input" placeholder="Тема" />
                     </div>
                     <div class="FormField FormField_vertical">
                         <label class="FormField__label">Описание</label>
                         <textarea class="FormField__input FomrField__input_textarea" placeholder="Тема"></textarea>
                     </div>
-                    <div class="FormField FormField_vertical">
+                    <div class="FormField ">
                         <label class="FormField__label">Тема задачи</label>
-                        <input type="date" class="FormField__input" placeholder="Тема">
+                        <input type="date" class="FormField__input" placeholder="Тема" />
                     </div>
                 </div>
                 <div class="FormModal__footer">
-                    <button class="Button">
+                    <button type="submit" class="Button" id="modal-save-button">
                         <span class="Button__text">Сохранить задачу</span>
                     </button>
                 </div>
             </form>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
