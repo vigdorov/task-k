@@ -6,7 +6,7 @@
     width: 100%;
 
     background-color: var(--blackout);
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
