@@ -1,7 +1,7 @@
 .Button {
     height: 40px;
     padding: 0 15px;
-    background-color: #028E9B;
+    background-color: var(--dark);
 
     display: flex;
     justify-content: space-between;
@@ -10,7 +10,7 @@
 }
 
 .Button:hover {
-    background-color: #015C65;
+    background-color: var(--more-dark);
     cursor: pointer;
 }
 
