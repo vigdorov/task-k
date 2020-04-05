@@ -8,6 +8,11 @@ module.exports = {
         path: path.resolve(__dirname, 'build'),
         filename: 'script.js',
     },
+    devServer: {
+        port: 3000,
+        compress: true,
+        open: true,
+    },
     module: {
         rules: [
             {
