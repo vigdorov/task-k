@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "lite-server -c bs-config.json"
+    "start": "lite-server -c bs-config.json",
+    "build": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,13 @@
     "url": "https://github.com/vigdorov/task-k/issues"
   },
   "homepage": "https://github.com/vigdorov/task-k#readme",
-  "dependencies": {
-    "lite-server": "^2.5.4"
+  "devDependencies": {
+    "css-loader": "^3.4.2",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.0.4",
+    "lite-server": "^2.5.4",
+    "mini-css-extract-plugin": "^0.9.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   }
 }
