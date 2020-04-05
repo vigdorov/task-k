@@ -12,7 +12,7 @@
 <body>
     <header class="HeaderPage">
         <h1 class="HeaderPage__title">Task Manager ver. 1.0.0</h1>
-        <button class="Button" id="add-task-button">
+        <button class="Button" id="addTaskButton">
             <span class="Button__icon">
                 <i class="fa fa-plus-square-o" aria-hidden="true"></i>
             </span>
@@ -80,12 +80,12 @@
             </div>
         </div>
     </section>
-    <div class="Modal" id="modal-window">
+    <div class="Modal" id="modalWindow">
         <div class="Modal__container">
-            <form class="FormModal" id="modal-form">
+            <form class="FormModal" id="modalForm">
                 <div class="FormModal__header">
                     <h3>Создание задачи</h3>
-                    <button type="button" class="IconButton" id="modal-close-button">
+                    <button type="button" class="IconButton" id="modalCloseButton">
                         <i class="fa fa-times" aria-hidden="true"></i>
                     </button>
                 </div>
@@ -104,13 +104,17 @@
                     </div>
                 </div>
                 <div class="FormModal__footer">
-                    <button type="submit" class="Button" id="modal-save-button">
+                    <button type="submit" class="Button" id="modalSaveButton">
                         <span class="Button__text">Сохранить задачу</span>
                     </button>
                 </div>
             </form>
         </div>
     </div>
+    <!-- Компоненты -->
+    <script src="components/modal/Modal.js"></script>
+
+    <!-- Обработчики -->
     <script src="script.js"></script>
 </body>
 
