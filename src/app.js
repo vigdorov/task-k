@@ -1,3 +1,7 @@
+import {modalWindow} from './components/modal/Modal';
+
+import './app.css';
+
 // Форма модального окна
 const modalForm = document.getElementById('modalForm');
 modalForm.addEventListener('submit', (event) => {

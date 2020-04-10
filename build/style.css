@@ -1,0 +1,201 @@
+.Button {
+    height: 40px;
+    padding: 0 15px;
+    background-color: var(--dark);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.Button:hover {
+    background-color: var(--more-dark);
+    cursor: pointer;
+}
+
+.Button__icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.Button__text {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.IconButton {
+    font-size: 20px;
+}
+
+.IconButton:hover {
+    cursor: pointer;
+    color: var(--dark-gray);
+}
+
+.FormField {
+    display: flex;
+    margin: 10px 0;
+    align-items: center;
+    font-size: 14px;
+}
+
+.FormField_vertical {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.FormField__label {
+    margin-right: 10px;
+    width: 100px;
+}
+
+.FormField_vertical .FormField__label {
+    margin-right: 0;
+    margin-bottom: 5px;
+    width: auto;
+}
+
+.FormField__input {
+    padding: 10px 15px;
+    width: 100%;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+}
+
+.FomrField__input_textarea {
+    resize: none;
+    height: 150px;
+}
+
+.Modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    background-color: var(--blackout);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Modal__container {
+    background-color: var(--white);
+    padding: 15px 35px;
+    border-radius: 5px;
+}
+.HeaderPage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 20px;
+    background-color: var(--white);
+}
+
+.HeaderPage__title {
+    font-size: 26px;
+    font-weight: normal;
+}
+
+.Task {
+    background-color: var(--light);
+    border: 1px solid var(--more-dark);
+    margin: 10px 0;
+    padding: 10px 20px;
+}
+
+.Task__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Task__title {
+    font-size: 16px;
+}
+
+.Task__controls .IconButton {
+    margin-left: 10px;
+}
+
+.Task__body {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.Task__description {
+    font-size: 14px;
+}
+
+.Task__footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Task__date {
+    font-style: italic;
+}
+
+.TasksList {
+    height: 100%;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+}
+.FormModal {
+    min-width: 300px;
+    width: 40vw;
+    padding: 15px 0;
+}
+
+.FormModal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.FormModal__body {
+    margin-top: 25px;
+}
+
+.FormModal__footer {
+    margin-top: 25px;
+}
+
+:root {
+    --white: #f0f0f0ff;
+    --light: #35C0CD;
+    --dark: #028E9B;
+    --more-dark: #015C65;
+    --black: #000;
+    --gray: #b9b9b9;
+    --dark-gray: #797979;
+    --blackout: rgba(0, 0, 0, 0.8);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+button {
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+button, textarea, input {
+    font-family: inherit;
+    font-size: inherit;
+}

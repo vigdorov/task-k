@@ -1,4 +1,4 @@
-const modalWindow = {
+export const modalWindow = {
     mainDiv: document.getElementById('modalWindow'),
     closeButton: document.getElementById('modalCloseButton'),
     saveButton: document.getElementById('modalSaveButton'),
