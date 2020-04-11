@@ -1,23 +1,36 @@
-export const modalWindow = {
-    mainDiv: document.getElementById('modalWindow'),
-    closeButton: document.getElementById('modalCloseButton'),
-    saveButton: document.getElementById('modalSaveButton'),
-    isOpen: function() {
-        return this.mainDiv.style.display === 'flex';
-    },
-    showWindow: function() {
-        this.mainDiv.style.display = 'flex';
-    },
-    closeWindow: function() {
-        this.mainDiv.style.display = 'none';
-    }
+import Component from '../../classes/Component';
+
+const CN = {
+    MODAL: 'Modal',
+    MODAL_SHOW: 'Modal_show',
 };
 
-modalWindow.mainDiv.addEventListener('click', (event) => {
-    const isMainDiv = event.target.getAttribute('id') === 'modalWindow';
-    if (modalWindow.isOpen() && isMainDiv) {
-        modalWindow.closeWindow();
-    }
-});
+class Modal extends Component {
+    constructor() {
+        super();
 
-modalWindow.closeButton.addEventListener('click', () => modalWindow.closeWindow());
+        const modal = document.querySelector(`.${CN.MODAL}`);
+
+        this.isOpen = function() {
+            return modal.classList.contains(CN.MODAL_SHOW);
+        }
+
+        this.show = function() {
+            modal.classList.add(CN.MODAL_SHOW);
+            this.emit('show');
+        };
+
+        this.hide = function() {
+            modal.classList.remove(CN.MODAL_SHOW);
+            this.emit('hide');
+        }
+
+        modal.addEventListener('click', event => {
+            if (event.target === modal) {
+                this.hide();
+            }
+        });
+    }
+}
+
+export default Modal;
