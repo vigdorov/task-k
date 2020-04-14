@@ -3,7 +3,7 @@ export const createElement = (tag, className, parent) => {
     element.className = className;
     parent.appendChild(element);
     return element;
-}
+};
 
 export const isEmpty = (value) => {
     switch (value) {
@@ -44,4 +44,8 @@ export const cloneDeep = variable => {
 export const prepareDate = date => {
     const [year, month, day] = date.split('-');
     return [day, month, year].join('.')
-}
+};
+
+export const generateId = () => {
+    return `f${(+new Date).toString(16)}`;
+};
