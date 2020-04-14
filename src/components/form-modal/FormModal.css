@@ -17,3 +17,8 @@
 .FormModal__footer {
     margin-top: 25px;
 }
+
+.FormModal__error {
+    font-size: 10px;
+    color: var(--red);
+}
