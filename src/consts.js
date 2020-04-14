@@ -7,3 +7,8 @@ export const FORM_STATUS = {
     CREATE: 'CREATE',
     EDIT: 'EDIT',
 };
+
+export const FORM_TITLE = {
+    [FORM_STATUS.CREATE]: 'Создание новой задачи',
+    [FORM_STATUS.EDIT]: 'Редактирование задачи',
+};

@@ -31,7 +31,7 @@ class TasksList extends Component {
             task.on('remove', removeTask);
         };
 
-        tasksService.request().then(tasksList => {
+        tasksService.loadTasksList().then(tasksList => {
             tasksList.forEach(taskInfo => {
                 renderTask(taskInfo);
             });

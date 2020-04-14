@@ -1,71 +1,42 @@
-import localStorageApi from '../api/localStorageAPI';
-import {isEmpty} from '../utils';
+import tasksApi from '../api/tasksAPI';
+import storeService from './storeService';
+import {FORM_STATUS} from '../consts';
 
-const ROUTE = 'TASKS_SERVICE_API';
-
-const findTask = (tasksList, findId) => tasksList.find(task => task.id === findId);
-
-class TasksService {
-    request() {
-        return localStorageApi.get(ROUTE)
-            .then(tasksList => isEmpty(tasksList) ? [] : tasksList);
+class TaskService {
+    loadTasksList() {
+        return tasksApi.request();
     }
 
-    find(id) {
-        return this.request()
-            .then(tasksList => {
-                const task = findTask(tasksList, id);
-                if (task) {
-                    return task;
-                }
-                throw new Error(`Задача с id "${id}" не найдена`);
-            });
+    createOrUpdateTask(data, status) {
+        switch (status) {
+            case FORM_STATUS.CREATE: {
+                const dataWithId = {
+                    ...data,
+                    id: generateId(),
+                };
+                return tasksApi.create(dataWithId)
+                    .then(() => {
+                        taskList.addTask(dataWithId);
+                    });
+            }
+            case FORM_STATUS.EDIT: {
+                const dataWithId = {
+                    ...data,
+                    id: storeService.getEditTaskId(),
+                };
+                return tasksApi.update(dataWithId)
+                    .then(() => {
+                        taskList.updateTask(dataWithId);
+                    });
+            }
+        }
     }
 
-    create(taskInfo) {
-        return this.request()
-            .then(tasksList => {
-                const task = findTask(tasksList, taskInfo.id);
-                if (task) {
-                    throw new Error(`Задача с id "${taskInfo.id}" уже создана`);
-                }
-                return localStorageApi.post(ROUTE, [
-                    ...tasksList,
-                    taskInfo,
-                ]);
-            });
-    }
-
-    update(taskInfo) {
-        return this.request()
-            .then(tasksList => {
-                const task = findTask(tasksList, taskInfo.id);
-                if (task) {
-                    return localStorageApi.post(ROUTE, tasksList.map(task => {
-                        if (task.id === taskInfo.id) {
-                            return taskInfo;
-                        }
-                        return task;
-                    }));
-                }
-                throw new Error(`Задача с id "${taskInfo.id}" не найдена`);
-            });
-    }
-
-    remove(id) {
-        return this.request()
-            .then(tasksList => {
-                const task = findTask(tasksList, id);
-                if (task) {
-                    return localStorageApi.post(ROUTE, [
-                        ...tasksList.filter(task => task.id !== id),
-                    ]);
-                }
-                throw new Error(`Задача с id "${id}" не найдена`);
-            });
+    removeTask(id) {
+        return tasksApi.remove(id);
     }
 }
 
-const tasksService = new TasksService();
+const taskService = new TaskService();
 
-export default tasksService;
+export default taskService;

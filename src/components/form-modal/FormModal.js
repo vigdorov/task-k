@@ -6,6 +6,7 @@ const CN = {
     CLOSE_BUTTON: 'IconButton',
     INPUT: 'FormField__input',
     ERROR: 'FormModal__error',
+    TITLE: 'FormModal__title',
 };
 
 const getErrors = (inputsList) => {
@@ -27,6 +28,7 @@ class FormModal extends Component {
 
         const form = document.querySelector(`.${CN.FORM}`);
         const closeButton = form.querySelector(`.${CN.CLOSE_BUTTON}`);
+        const title = form.querySelector(`.${CN.TITLE}`);
 
         const inputsList = Object.values(form.querySelectorAll(`.${CN.INPUT}`));
 
@@ -76,6 +78,10 @@ class FormModal extends Component {
             inputsList.forEach(input => {
                 input.value = taskInfo[input.name];
             });
+        };
+
+        this.setTitle = function (text) {
+            title.textContent = text;
         };
     }
 }
