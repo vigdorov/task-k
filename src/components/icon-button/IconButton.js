@@ -4,7 +4,8 @@ import {createElement} from '../../utils';
 const CN = {
     BUTTON: 'IconButton',
     FA: 'fa',
-}
+};
+
 class IconButton extends Component {
     constructor(iconClass, parent) {
         super();

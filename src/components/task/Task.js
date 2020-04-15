@@ -1,5 +1,5 @@
 import Component from '../../classes/Component';
-import {createElement, prepareDate, cloneDeep} from '../../utils';
+import {createElement, prepareDate} from '../../utils';
 import IconButton from '../icon-button/IconButton';
 
 const CN = {
@@ -62,7 +62,7 @@ class Task extends Component {
 
         this.getId = function() {
             return id;
-        }
+        };
     }
 }
 

@@ -9,21 +9,21 @@ class NotifyService {
 
         this.successNotify = function(message) {
             showNotify(message, STATUSES.SUCCESS);
-        }
+        };
 
         this.warningNotify = function(message) {
             showNotify(message, STATUSES.WARNING);
             console.warn(message);
-        }
+        };
 
         this.dangerNotify = function(message) {
             showNotify(message, STATUSES.DANGER);
             console.error(message);
-        }
+        };
 
         this.secondaryNotify = function(message) {
             showNotify(message);
-        }
+        };
     }
 }
 

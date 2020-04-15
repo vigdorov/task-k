@@ -13,7 +13,7 @@ class Modal extends Component {
 
         this.isOpen = function() {
             return modal.classList.contains(CN.MODAL_SHOW);
-        }
+        };
 
         this.show = function() {
             modal.classList.add(CN.MODAL_SHOW);
@@ -23,7 +23,7 @@ class Modal extends Component {
         this.hide = function() {
             modal.classList.remove(CN.MODAL_SHOW);
             this.emit('hide');
-        }
+        };
 
         modal.addEventListener('click', event => {
             if (event.target === modal) {

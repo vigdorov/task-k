@@ -15,7 +15,7 @@ const getErrors = (inputsList) => {
             return [
                 ...memo,
                 `Поле ${name} не заполнено!`,
-            ]
+            ];
         }
 
         return memo;
@@ -51,7 +51,7 @@ class FormModal extends Component {
                 return {
                     ...memo,
                     [name]: value,
-                }
+                };
             }, {});
 
             if (isEmpty(errors)) {
