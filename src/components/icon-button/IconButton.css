@@ -1,5 +1,6 @@
 .IconButton {
     font-size: 20px;
+    color: inherit;
 }
 
 .IconButton:hover {

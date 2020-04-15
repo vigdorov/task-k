@@ -1,8 +1,10 @@
 import tasksApi from '../api/tasksAPI';
 import storeService from './storeService';
 import {FORM_STATUS} from '../consts';
+import notifyService from './notifyService';
+import {generateId} from '../utils';
 
-class TaskService {
+class TasksService {
     loadTasksList() {
         return tasksApi.request();
     }
@@ -16,8 +18,10 @@ class TaskService {
                 };
                 return tasksApi.create(dataWithId)
                     .then(() => {
-                        taskList.addTask(dataWithId);
-                    });
+                        notifyService.successNotify('Задача создана');
+                        return dataWithId;
+                    })
+                    .catch(error => notifyService.dangerNotify(error));
             }
             case FORM_STATUS.EDIT: {
                 const dataWithId = {
@@ -26,17 +30,23 @@ class TaskService {
                 };
                 return tasksApi.update(dataWithId)
                     .then(() => {
-                        taskList.updateTask(dataWithId);
-                    });
+                        notifyService.successNotify('Задача обновлена');
+                        return dataWithId;
+                    })
+                    .catch(error => notifyService.dangerNotify(error));
             }
         }
     }
 
     removeTask(id) {
-        return tasksApi.remove(id);
+        return tasksApi.remove(id)
+            .then(() => {
+                notifyService.successNotify('Задача удалена');
+            })
+            .catch(error => notifyService.dangerNotify(error));
     }
 }
 
-const taskService = new TaskService();
+const tasksService = new TasksService();
 
-export default taskService;
+export default tasksService;
