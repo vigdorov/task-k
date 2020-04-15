@@ -1,5 +1,5 @@
 import Component from '../../classes/Component';
-import {createElement, prepareDate} from '../../utils';
+import {createElement, prepareDate, cloneDeep} from '../../utils';
 import IconButton from '../icon-button/IconButton';
 
 const CN = {
@@ -16,8 +16,11 @@ const CN = {
 };
 
 class Task extends Component {
-    constructor(taskInfo, parent) {
+    constructor(info, parent) {
         super();
+        let taskInfo = {
+            ...info,
+        };
         const id = taskInfo.id;
 
         const task = createElement('div', CN.TASK, parent);
@@ -47,7 +50,11 @@ class Task extends Component {
             this.emit('remove', taskInfo);
         });
 
-        this.update = function(taskInfo) {
+        this.update = function(info) {
+            taskInfo = {
+                ...taskInfo,
+                ...info,
+            };
             title.textContent = taskInfo.title;
             description.textContent = taskInfo.description;
             date.textContent = prepareDate(taskInfo.date);

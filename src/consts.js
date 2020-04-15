@@ -12,3 +12,9 @@ export const FORM_TITLE = {
     [FORM_STATUS.CREATE]: 'Создание новой задачи',
     [FORM_STATUS.EDIT]: 'Редактирование задачи',
 };
+
+export const STATUSES = {
+    SUCCESS: 'SUCCESS',
+    WARNING: 'WARNING',
+    DANGER: 'DANGER',
+};

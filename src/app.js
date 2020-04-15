@@ -8,7 +8,7 @@ import TaskList from './components/tasks-list/TasksList';
 import storeService from './services/storeService';
 import tasksService from './services/tasksService';
 
-import {FORM_TITLE} from './consts';
+import {FORM_TITLE, FORM_STATUS} from './consts';
 
 const taskList = new TaskList();
 const modal = new Modal();
@@ -34,8 +34,15 @@ addTaskButton
 formModal
     .on('submit', data => {
         const status = storeService.getFormStatus();
-        tasksSevice.createOrUpdateTask(data, status)
-            .then(() => {
+        tasksService.createOrUpdateTask(data, status)
+            .then((dataWithId) => {
+                if (status === FORM_STATUS.CREATE) {
+                    taskList.addTask(dataWithId);
+                }
+                if (status === FORM_STATUS.EDIT) {
+                    taskList.updateTask(dataWithId);
+                }
+                
                 modal.hide();
                 storeService.setCreateForm();
             });
@@ -51,5 +58,5 @@ taskList
         modal.show();
     })
     .on('removeTask', taskInfo => {
-        tasksService.remove(taskInfo.id);
+        tasksService.removeTask(taskInfo.id);
     });

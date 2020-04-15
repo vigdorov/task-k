@@ -1,0 +1,59 @@
+@keyframes notify {
+    0% {
+        transform: translateX(300px);
+    }
+
+    70% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.Notify {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+}
+
+.Notify__message {
+    border-radius: 5px;
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 10px 15px;
+    margin-top: 10px;
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    animation: notify 350ms ease-in;
+}
+
+.Notify__message_success {
+    background-color: var(--green);
+}
+
+.Notify__message_danger {
+    background-color: var(--red);
+}
+
+.Notify__message_warning {
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
+.Notify__text {
+    color: var(--white);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: inherit;
+    user-select: none;
+}
+
+.Notify__cross {
+    cursor: pointer;
+}
