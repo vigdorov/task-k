@@ -15,12 +15,12 @@ export default Object.assign(store, {
     },
     setEditForm: function(id) {
         this.set(STORE_KEYS.FORM_STATUS, FORM_STATUS.EDIT);
-        this.set(STORE_KEYS.EDIT_TASK_ID, id)
+        this.set(STORE_KEYS.EDIT_TASK_ID, id);
     },
     getFormStatus: function() {
         return this.get(STORE_KEYS.FORM_STATUS);
     },
     getEditTaskId: function() {
         return this.get(STORE_KEYS.EDIT_TASK_ID);
-    }
+    },
 });
