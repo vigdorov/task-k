@@ -38,7 +38,7 @@ const createOrUpdate = (data, status) => {
         }
     }
     throw new Error(`Не обработанный status - "${status}"`);
-}
+};
 
 modal
     .on('hide', () => {

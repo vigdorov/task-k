@@ -6,11 +6,13 @@ const ROUTE = 'TASKS_SERVICE_API';
 const findTask = (tasksList, findId) => tasksList.find(task => task.id === findId);
 
 class TasksService {
+    // Возвращает полный список данных
     request() {
         return localStorageApi.get(ROUTE)
             .then(tasksList => isEmpty(tasksList) ? [] : tasksList);
     }
 
+    // Возвращает один элемент по id
     find(id) {
         return this.request()
             .then(tasksList => {
@@ -22,6 +24,7 @@ class TasksService {
             });
     }
 
+    // Создает таску
     create(taskInfo) {
         return this.request()
             .then(tasksList => {
@@ -36,6 +39,7 @@ class TasksService {
             });
     }
 
+    // Обновление таски
     update(taskInfo) {
         return this.request()
             .then(tasksList => {
@@ -52,6 +56,7 @@ class TasksService {
             });
     }
 
+    // Удаление таски
     remove(id) {
         return this.request()
             .then(tasksList => {
