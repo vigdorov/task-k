@@ -43,7 +43,7 @@ export const cloneDeep = variable => {
 
 export const prepareDate = date => {
     const [year, month, day] = date.split('-');
-    return [day, month, year].join('.')
+    return [day, month, year].join('.');
 };
 
 export const generateId = () => {
